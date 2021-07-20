@@ -18,6 +18,7 @@ export interface IRocket extends Document {
   readonly name: string
   readonly type: string
   readonly active: boolean
+  readonly manufacturer: string
   readonly stages: number
   readonly cost_per_launch: number
   readonly height: IMetersAndFeets

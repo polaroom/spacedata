@@ -1,0 +1,57 @@
+---
+title: Rockets Resources
+---
+
+## Rocket Object
+
+### Rocket Schema
+
+| field           | type                                        | description                                    |
+| --------------- | ------------------------------------------- | ---------------------------------------------- |
+| id              | ObjectId                                    | the id of rocket                               |
+| name            | string                                      | name of the rocket                             |
+| type            | string                                      | type of the rocket                             |
+| manufacturer    | string (ObjectId)                           | the [company](./company.mdx#company-schema) id |
+| active          | boolean                                     | is it in use rocket                            |
+| stages          | number                                      | the number of rocket stages                    |
+| cost_per_launch | number                                      | how much per launch                            |
+| first_stage     | [first stage object](#first-stage-schema)   | the info about first stage                     |
+| second_stage    | [second stage object](#second-stage-schema) | the info about second stage                    |
+
+### First Stage Schema
+
+| field | type | description |
+| ----- | ---- | ----------- |
+
+### Second Stage Schema
+
+| field | type | description |
+| ----- | ---- | ----------- |
+
+## List Rockets
+
+```http
+GET /rockets
+```
+
+Returns the [rocket](#rocket-object) object.
+
+#### Example Response
+
+```json
+[{}, {}]
+```
+
+## Get Rocket
+
+```http
+GET /rockets/{rocket.id}
+```
+
+Returns the [rocket](#rocket-object) object.
+
+#### Example Response
+
+```json
+{}
+```

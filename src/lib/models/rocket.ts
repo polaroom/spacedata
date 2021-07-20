@@ -17,6 +17,10 @@ const rocketSchema = new mongoose.Schema<
     active: {
       type: Boolean,
     },
+    manufacturer: {
+      type: String,
+      ref: 'Company',
+    },
     stages: {
       type: Number,
     },

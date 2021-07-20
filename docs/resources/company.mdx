@@ -1,0 +1,61 @@
+---
+title: Company Resources
+---
+
+## Company Object
+
+### Company Schema
+
+| field        | type                                        | description                   |
+| ------------ | ------------------------------------------- | ----------------------------- |
+| id           | ObjectId                                    | the id of company             |
+| name         | string                                      | the name of a company         |
+| founder      | string                                      | the name of a company founder |
+| founded      | number                                      | the year when company founded |
+| employess    | number                                      | number of employees           |
+| vehicles     | number                                      | number of vehicles (rockets)  |
+| launch_sites | number                                      | number of launch sites        |
+| ceo          | string                                      | name of the current CEO       |
+| cto          | string                                      | name of the current CTO       |
+| headquarters | [headquarters object](#headquarters-schema) | the info about company hq     |
+| links        | [links object](#links-schema)               | a list of company links       |
+
+### Headquarters Schema
+
+| field   | type   | description      |
+| ------- | ------ | ---------------- |
+| address | string | the adress of hq |
+| city    | string | name of the city |
+| state   | string | state of the hq  |
+
+### Links Schema
+
+| field   | type   | description                  |
+| ------- | ------ | ---------------------------- |
+| website | string | link to the official website |
+| flickr  | string | link to the official Flickr  |
+| twitter | string | link to the official Twitter |
+
+## List Companies
+
+```http
+GET /companies
+```
+
+#### Example Response
+
+```json
+[{}, {}]
+```
+
+## Get Company
+
+```http
+GET /companies/:id
+```
+
+#### Example Response
+
+```json
+{}
+```
