@@ -1,0 +1,24 @@
+---
+title: Launches Resource
+---
+
+## Launch Object
+
+### Launch Schema
+
+| field         | type              | description                         |
+| ------------- | ----------------- | ----------------------------------- |
+| id            | string (ObjectId) | the id of launch\*                  |
+| name          | string            | name of the mission                 |
+| flight_number | number            | the number of flight\*              |
+| upcoming      | boolean           | does this launch is upcoming        |
+| date_unix     | number            | launch date in unix time            |
+| date_utc      | string            | launch date in utc time             |
+| date_local    | string            | launch date in local time           |
+| success       | boolean           | does this mission be success or not |
+| details       | string            | information about mission           |
+| rocket        | rocket object     | rocket what's used to flight        |
+| launchpad     | launchpad object  | launchpad from rocket do liftoff    |
+
+\* - the `flight_number` unique for every provider and starts from 1, the `id`
+is an entry in the database

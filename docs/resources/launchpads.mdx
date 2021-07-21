@@ -1,0 +1,52 @@
+---
+title: Launchpad Resources
+---
+
+## Launchpad Object
+
+### Launchpad Schema
+
+| field            | type                                            | description                              |
+| ---------------- | ----------------------------------------------- | ---------------------------------------- |
+| id               | string (ObjectId)                               | this id of this launchpad                |
+| name             | string                                          | name of the launchpad                    |
+| full_name        | string                                          | full name of the launchpad               |
+| region           | string                                          | region where launchpad placed            |
+| timezone         | string                                          | timezone of the launchpad                |
+| latitude         | number (float)                                  | latitude of launchpad                    |
+| longitude        | number (float)                                  | longitude of launchpad                   |
+| launch_attempts  | number                                          | number of launch attempts                |
+| launch_successes | number                                          | number of successes launches             |
+| rockets          | array of [rockets](rockets.mdx#rocket-object)   | rockets what's stars from this launchpad |
+| launches         | array of [launches](launches.mdx#launch-object) | launches from this launchpad             |
+| details          | string                                          | information about launchpad              |
+| status           | string                                          | status of launchpad                      |
+| locality         | string                                          | location of launchpad                    |
+
+## Get Launchpads
+
+```http
+GET /launchpads
+```
+
+Returns the [launchpad](#launchpad-object) objects.
+
+#### Example Response
+
+```json
+[{}, {}]
+```
+
+## Get Launchpad
+
+```http
+GET /launchpads/{launchpad.id}
+```
+
+Returns the [launchpad](#launchpad-object) object.
+
+#### Example Response
+
+```json
+{}
+```
