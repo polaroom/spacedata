@@ -36,4 +36,18 @@ export class RocketController {
       }
     }
   }
+
+  public async createRocket(req: express.Request) {
+    try {
+      const rocket = await Rocket.create(req.body)
+      await rocket.save()
+
+      return rocket
+    } catch (err: any) {
+      return {
+        status: 500,
+        message: err.message,
+      }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import * as express from 'express'
 import { Error as MongooseError } from 'mongoose'
 import { Company } from '../models/company'
+import { transformError } from '../responses/transform-error'
 
 export class CompanyController {
   public async getCompanies() {
@@ -30,17 +31,18 @@ export class CompanyController {
 
       return company
     } catch (err) {
-      if (err instanceof MongooseError) {
-        return {
-          status: 500,
-          message: err.message,
-        }
-      }
+      return transformError(err)
+    }
+  }
 
-      return {
-        status: 500,
-        message: err,
-      }
+  public async createCompany(req: express.Request) {
+    try {
+      const company = await Company.create(req.body)
+      await company.save()
+
+      return company
+    } catch (err) {
+      return transformError(err)
     }
   }
 }

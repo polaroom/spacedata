@@ -23,3 +23,16 @@ export const getRocket = async (
 
   return res.json(resp)
 }
+
+export const createRocket = async (
+  req: express.Request,
+  res: express.Response,
+) => {
+  const resp = await controller.createRocket(req)
+
+  if ('name' in resp) {
+    return res.json(resp)
+  }
+
+  return res.status(resp.status).json(resp)
+}

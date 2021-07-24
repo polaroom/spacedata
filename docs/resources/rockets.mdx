@@ -15,18 +15,28 @@ title: Rockets Resources
 | active          | boolean                                     | is it in use rocket                            |
 | stages          | number                                      | the number of rocket stages                    |
 | cost_per_launch | number                                      | how much per launch                            |
+| height          | object of meters and feets                  | the height of rocket                           |
+| diameter        | object of meters and feets                  | the diameter of rocket                         |
+| payload_weights | object of strings                           | the maximum weights of payloads                |
 | first_stage     | [first stage object](#first-stage-schema)   | the info about first stage                     |
 | second_stage    | [second stage object](#second-stage-schema) | the info about second stage                    |
 
 ### First Stage Schema
 
-| field | type | description |
-| ----- | ---- | ----------- |
+| field            | type                          | description                 |
+| ---------------- | ----------------------------- | --------------------------- |
+| reusable         | boolean                       | does this stage is reusable |
+| engines          | number                        | the number of engines       |
+| burn_time_sec    | number                        | the engine burn time        |
+| thrust_sea_level | object of kN and lbf (number) | the thrust power            |
 
 ### Second Stage Schema
 
-| field | type | description |
-| ----- | ---- | ----------- |
+| field         | type                          | description           |
+| ------------- | ----------------------------- | --------------------- |
+| engines       | number                        | the number of engines |
+| burn_time_sec | number                        | the engine burn time  |
+| thrust        | object of kN and lbf (number) | the thrust power      |
 
 ## List Rockets
 

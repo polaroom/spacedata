@@ -19,3 +19,11 @@ export const getCompany = async (
 
   return res.json(resp)
 }
+
+export const createCompany = async (
+  req: express.Request,
+  res: express.Response,
+) => {
+  const resp = await controller.createCompany(req)
+  return res.json(resp)
+}
